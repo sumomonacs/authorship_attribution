@@ -1,12 +1,27 @@
-Authorship Attribution with Sentence-BERT and Siamese Network
-This project implements an authorship attribution system using a Sentence-BERT encoder within a Siamese neural network architecture trained with contrastive loss.
-Given two text excerpts, the model predicts whether they were written by the same author, and can also identify the most likely author from a reference set.
+# Authorship Attribution with Sentence-BERT and Siamese Network
 
-Quick Start
-1. Install dependencies:
+This project implements an **authorship attribution** system using a **Sentence-BERT** encoder within a **Siamese neural network** trained with contrastive loss.  
+The model takes two text excerpts and predicts whether they were written by the same author. It can also identify the most likely author for an unseen excerpt by comparing it against a reference set.
+
+---
+## 📥 Download Pretrained Model
+
+You can download the pretrained **`best.pt`** checkpoint from the **[Releases](https://github.com/sumomonacs/authorship_attribution/releases)** page.  
+After downloading, place it in the `models/` directory:
+```bash
+mkdir -p models
+mv path/to/best.pt models/best.pt
+```
+
+## 🚀 Quick Start
+
+### 1️⃣ Install dependencies
+```bash
 pip install torch sentence-transformers scikit-learn tqdm matplotlib numpy pandas
+```
 
-2. Train the model:
+### 2️⃣ Train the model
+```bash
 python -m scripts.train_model \
     --pairs data/pairs.json \
     --val-ratio 0.2 \
@@ -16,36 +31,58 @@ python -m scripts.train_model \
     --lr 5e-6 \
     --grad-accum 1 \
     --out models
+```
 
-3. Evaluate the model
+### 3️⃣  Evaluate the model
+```bash
 python -m scripts.evaluate_model \
-    --ckpt models/best.pt \
-    --pairs data/pairs_eval.json \
-    --plots
+```
 
-4. Run inference
+### 4️⃣  Run Inference
+```bash
 python -m scripts.infer_author \
     --ckpt models/best.pt \
     --refs data/author_refs.json \
     --inputs data/batch_quotes.json \
     --out results/batch_results.json
+```
 
-Environment:
-Python: 3.10+ recommended
+## 💻 Environment
 
-Required packages:
-torch, sentence-transformers, scikit-learn, tqdm, matplotlib, numpy, pandas
+- **Python:** 3.10+ recommended  
+- **Required packages:**  
+  `torch`, `sentence-transformers`, `scikit-learn`, `tqdm`, `matplotlib`, `numpy`, `pandas`
 
-Project Structure
+---
 
-data/               # Input datasets and references
-models/             # Saved model checkpoints
-results/            # Inference outputs
-scripts/            # Training, inference, and evaluation scripts
-src/                # Core model and utility modules
+## 📂 Project Structure
+## 📦 authorship_attribution
+ ├── 📁 data/               # 📄 Input datasets and references
+ ├── 📁 models/             # 💾 Saved model checkpoints (not tracked in repo)
+ ├── 📁 results/            # 📊 Inference outputs
+ ├── 📁 scripts/            # 🛠️ Training, inference, and evaluation scripts
+ ├── 📁 src/                # 🧠 Core model and utility modules
+ └── README.md              # 📜 Project documentation
 
-Training
+
+## 📂 Dataset
+
+The dataset consists of excerpts from five canonical Anglophone authors (Charlotte Brontë, Edith Wharton, George Eliot, Henry James, and Virginia Woolf).  
+All raw texts were sourced from **[Project Gutenberg](https://www.gutenberg.org/)**, which provides works in the public domain.  
+
+The excerpts are split into:
+- **Raw texts** — full books in plain text format (public domain).
+- **Cleaned excerpts** — extracted passages of 300–500 words, balanced across authors, used for training and evaluation.
+
+### 🔹 Using the dataset
+- **Option 1:** Download the compressed dataset  
+
+  Unzip into the project root so it becomes `data/`.
+- **Option 2:** Rebuild from scratch using the provided preprocessing scripts in `src/preprocess.py`.
+
+### 🔹 Training
 Train the model on author pairs:
+```bash
 python -m scripts.train_model \
     --pairs data/pairs.json \
     --val-ratio 0.2 \
@@ -55,21 +92,20 @@ python -m scripts.train_model \
     --lr 5e-6 \
     --grad-accum 1 \
     --out models
+```
 
-Inference
+### 🔹 Inference
 Run author prediction for a batch of unseen excerpts:
+```bash
 python -m scripts.infer_author \
     --ckpt models/best.pt \
     --refs data/author_refs.json \
     --inputs data/batch_quotes.json \
     --out results/batch_results.json
+```
 
-Evaluation
+### 🔹 Evaluation
 Evaluate model accuracy and generate plots:
-python -m scripts.evaluate_model \
-    --ckpt models/best.pt \
-    --pairs data/pairs_eval.json \
-    --plots
-
-Notes
-For out-of-domain generalization checks, see Appendix of the accompanying report.# authorship_attribution
+```bash
+python -m scripts.evaluate_model
+```
