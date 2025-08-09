@@ -1,0 +1,182 @@
+[
+  {
+    "id": "code1",
+    "pred": "Henry James",
+    "top3": [
+      {
+        "author": "Henry James",
+        "score": 0.9716401696205139
+      },
+      {
+        "author": "Charlotte Brontë",
+        "score": 0.6016089916229248
+      },
+      {
+        "author": "Edith Wharton",
+        "score": 0.5246805548667908
+      }
+    ]
+  },
+  {
+    "id": "code2",
+    "pred": "Henry James",
+    "top3": [
+      {
+        "author": "Henry James",
+        "score": 0.814823567867279
+      },
+      {
+        "author": "Charlotte Brontë",
+        "score": 0.6826217770576477
+      },
+      {
+        "author": "Edith Wharton",
+        "score": 0.638671875
+      }
+    ]
+  },
+  {
+    "id": "code3",
+    "pred": "Charlotte Brontë",
+    "top3": [
+      {
+        "author": "Charlotte Brontë",
+        "score": 0.8461723327636719
+      },
+      {
+        "author": "Edith Wharton",
+        "score": 0.8095340728759766
+      },
+      {
+        "author": "Henry James",
+        "score": 0.8089281320571899
+      }
+    ]
+  },
+  {
+    "id": "code4",
+    "pred": "Charlotte Brontë",
+    "top3": [
+      {
+        "author": "Charlotte Brontë",
+        "score": 0.7599629759788513
+      },
+      {
+        "author": "Edith Wharton",
+        "score": 0.7342810034751892
+      },
+      {
+        "author": "Henry James",
+        "score": 0.6400187611579895
+      }
+    ]
+  },
+  {
+    "id": "code5",
+    "pred": "Virginia Woolf",
+    "top3": [
+      {
+        "author": "Virginia Woolf",
+        "score": 0.9751680493354797
+      },
+      {
+        "author": "George Eliot",
+        "score": 0.5765222311019897
+      },
+      {
+        "author": "Henry James",
+        "score": -0.3658815920352936
+      }
+    ]
+  },
+  {
+    "id": "code6",
+    "pred": "Virginia Woolf",
+    "top3": [
+      {
+        "author": "Virginia Woolf",
+        "score": 0.9716551899909973
+      },
+      {
+        "author": "George Eliot",
+        "score": 0.5051431059837341
+      },
+      {
+        "author": "Henry James",
+        "score": -0.29787373542785645
+      }
+    ]
+  },
+  {
+    "id": "code7",
+    "pred": "Charlotte Brontë",
+    "top3": [
+      {
+        "author": "Charlotte Brontë",
+        "score": 0.9497734308242798
+      },
+      {
+        "author": "Edith Wharton",
+        "score": 0.9260768890380859
+      },
+      {
+        "author": "Henry James",
+        "score": 0.6788687705993652
+      }
+    ]
+  },
+  {
+    "id": "code8",
+    "pred": "Virginia Woolf",
+    "top3": [
+      {
+        "author": "Virginia Woolf",
+        "score": 0.9223341941833496
+      },
+      {
+        "author": "George Eliot",
+        "score": 0.6647816896438599
+      },
+      {
+        "author": "Henry James",
+        "score": -0.41069069504737854
+      }
+    ]
+  },
+  {
+    "id": "code9",
+    "pred": "George Eliot",
+    "top3": [
+      {
+        "author": "George Eliot",
+        "score": 0.7763734459877014
+      },
+      {
+        "author": "Virginia Woolf",
+        "score": 0.32753756642341614
+      },
+      {
+        "author": "Edith Wharton",
+        "score": 0.12570834159851074
+      }
+    ]
+  },
+  {
+    "id": "code10",
+    "pred": "Edith Wharton",
+    "top3": [
+      {
+        "author": "Edith Wharton",
+        "score": 0.6240335702896118
+      },
+      {
+        "author": "Charlotte Brontë",
+        "score": 0.5605040788650513
+      },
+      {
+        "author": "George Eliot",
+        "score": 0.48782214522361755
+      }
+    ]
+  }
+]
